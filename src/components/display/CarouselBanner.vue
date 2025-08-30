@@ -21,7 +21,7 @@ import { BannerService } from '@/services/banner.service.ts'
 const bannerSvc = new BannerService()
 const carouselConfig = ref<Partial<CarouselConfig>>({
   itemsToShow: 1,
-  autoplay: 0,
+  autoplay: 4000,
   wrapAround: true,
   mouseDrag: {
     threshold: 0.1,

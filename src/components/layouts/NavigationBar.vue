@@ -14,7 +14,7 @@
       <ArrowRightLeft :size="24" />
     </div>
     <nav class="menu flex flex-1 justify-start gap-4">
-      <span class="nav-item io-clickable io-clickable-nav active ">
+      <span class="nav-item io-clickable io-clickable-nav active">
         <Compass :size="24" color="var(--nav-active)" />
         <label>Discover</label>
       </span>
@@ -48,6 +48,8 @@ import { Wallet, Lightbulb, ArrowRightLeft, Compass, Languages } from 'lucide-vu
   background-color: var(--nav-bg);
   padding: 0.5rem 1rem;
   z-index: 10;
+  height: 74px;
+  overflow: hidden;
 }
 
 .nav-item {
@@ -55,6 +57,11 @@ import { Wallet, Lightbulb, ArrowRightLeft, Compass, Languages } from 'lucide-vu
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
 
   & label {
     font-size: var(--text-xs);
@@ -89,5 +96,10 @@ import { Wallet, Lightbulb, ArrowRightLeft, Compass, Languages } from 'lucide-vu
   display: flex;
   align-items: center;
   justify-content: center;
+
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 </style>

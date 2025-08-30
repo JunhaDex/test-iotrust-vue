@@ -1,15 +1,16 @@
 <template>
   <div class="list-item-card" @click="handleItemClick">
     <div class="card-content flex justify-between items-center flex-nowrap gap-4">
-      <div class="list-image"></div>
+      <div class="list-image">
+        <img :src="item.profile" alt="item-image" />
+      </div>
       <div class="flex-1 list-content">
-        <h3 class="text-xl font-medium ellipse">Title</h3>
+        <h3 class="text-xl font-medium ellipse">{{ item.title }}</h3>
         <p class="text-sm text-tx-gray-3 ellipse">
-          Description text goes here. This is a sample description to illustrate the layout of the
-          list item card.
+          {{ item.description }}
         </p>
       </div>
-      <button class="io-btn btn-outline btn-delete" @click.stop="handleDelete">
+      <button v-if="showDelete" class="io-btn btn-outline btn-delete" @click.stop="handleDelete">
         <Bookmark :size="24" fill="var(--color-tx-red)" stroke-width="0" />
         <span class="inline-block text-sm">삭제</span>
       </button>
@@ -19,23 +20,25 @@
 <script lang="ts" setup>
 import type { DiscoveryItem } from '@/types/discovery.interface.ts'
 import { Bookmark } from 'lucide-vue-next'
+import { computed } from 'vue'
 
-// const props = defineProps<{
-//   item: DiscoveryItem
-//   options?: {
-//     showDelete?: boolean
-//   }
-// }>()
-//
+const props = defineProps<{
+  item: DiscoveryItem
+  options?: {
+    showDelete?: boolean
+  }
+}>()
+
 const emit = defineEmits(['delete', 'open'])
 
-// const showDelete = computed(() => props.options?.showDelete ?? false)
+const showDelete = computed(() => props.options?.showDelete ?? false)
+
 function handleDelete() {
-  emit('delete')
+  emit('delete', props.item)
 }
 
 function handleItemClick() {
-  emit('open')
+  emit('open', props.item)
 }
 </script>
 <style scoped>
@@ -65,14 +68,11 @@ function handleItemClick() {
   border-radius: 0.5rem;
   flex-shrink: 0;
   box-shadow: var(--shadow-md);
+  overflow: hidden;
 }
 
-.ellipse {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.list-content {
+  min-width: 0;
 }
 
 .btn-delete {

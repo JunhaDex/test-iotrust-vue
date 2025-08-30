@@ -11,6 +11,10 @@ export class BannerService extends ApiService {
     order: 'order',
   } as const
 
+  constructor() {
+    super()
+  }
+
   async getBannerList(options?: { page: PageRequest }): Promise<PageResponse<BannerItem>> {
     // 실제 환경에서는 axios 를 통한 API 호출이 이루어집니다.
     // api 응답 대기 - api 응답 mock

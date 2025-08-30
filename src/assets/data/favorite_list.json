@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "OpenSea",
+    "description": {
+      "en": "the largest NFT marketplace",
+      "ko": "가장 큰 NFT 마켓플레이스"
+    },
+    "profile": "https://raw.githubusercontent.com/KyungeunKim/iotrust-frontend-homework/main/images/icon_opensea.png",
+    "link": "https://opensea.io/"
+  },
+  {
+    "id": 2,
+    "title": "MoonPay",
+    "description": {
+      "en": "",
+      "ko": ""
+    },
+    "profile": "https://raw.githubusercontent.com/KyungeunKim/iotrust-frontend-homework/main/images/icon_moonpay.png",
+    "link": "https://buy.moonpay.com/v2/buy"
+  },
+  {
+    "id": 3,
+    "title": "Rarible",
+    "description": {
+      "en": "NFT Marketplace for Brands, Communities and Traders",
+      "ko": "브랜드, 커뮤니티 및 트레이더를 위한 NFT 마켓플레이스"
+    },
+    "profile": "https://raw.githubusercontent.com/KyungeunKim/iotrust-frontend-homework/main/images/icon_rarible.png",
+    "link": "https://rarible.com/"
+  }
+]

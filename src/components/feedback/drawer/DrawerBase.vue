@@ -2,7 +2,7 @@
   <div class="drawer-wrap" :class="{ show: isOpen }">
     <div class="drawer-handle"></div>
     <div class="inner-scroll">
-      <slot name="default" />
+      <slot />
     </div>
     <slot name="sticky" />
   </div>
@@ -37,7 +37,7 @@ watch(
   width: 100%;
   max-width: var(--layout-breakpoint);
   transform: translate(-50%, 100%);
-  max-height: 75vh;
+  height: 75vh;
   background-color: var(--color-background-1);
   border-radius: 1rem 1rem 0 0;
   transition: transform 0.3s ease-in;
@@ -46,6 +46,11 @@ watch(
 
   &.show {
     transform: translate(-50%, 0);
+  }
+
+  & .inner-scroll {
+    overflow-y: auto;
+    flex: 1;
   }
 
   .drawer-handle {
