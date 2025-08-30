@@ -14,16 +14,28 @@
 
 ## 프로젝트 실행 및 빌드방법 설명
 
-1. 사전 요구사항 - 프로젝트 클론 후 패키지를 설치합니다.
+1. 사전 요구사항 - 프로젝트를 가져온 후 패키지를 설치합니다.
     - nodejs 22 이상
     - yarn v1.22.x
+   
+   ```bash
+   git clone https://github.com/JunhaDex/test-iotrust-vue.git
+   cd test-iotrust-vue
+   yarn
+   ```
 2. 개발 및 빌드시에는 mode 옵션을 통해 환경을 설정할 수 있습니다.
     - dev: 개발용 환경
     - stage: 스테이징 환경
     - prod: 실환경
 
    ```bash
+   # dev 로 실시간 핫리로드 개발 서버 실행
    yarn dev --mode dev # 개발용
+   yarn dev --mode stage # 스테이징
+   yarn dev --mode prod # 실환경
+   
+   # 해당 환경으로 빌드 및 미리보기 (preview)
+   yarn build --mode dev # 개발환경
    yarn build --mode stage # 스테이징
    yarn build --mode prod # 실환경
    yarn preview # 빌드 결과 preview

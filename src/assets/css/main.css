@@ -154,7 +154,7 @@ img {
   border-radius: 1rem;
   box-shadow: var(--shadow-md);
   width: 85vw;
-  max-width: 640px;
+  max-width: 380px;
   max-height: 65vh;
   overflow-y: auto;
 }

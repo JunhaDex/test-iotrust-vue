@@ -26,7 +26,9 @@ export function detectPlatform(): AllowPlatform {
   const ua = navigator.userAgent || navigator.vendor
   console.log(ua)
   const isIos =
-    /iPad|iPhone|iPod/.test(ua) ||
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+    /iPad|iPhone|iPod|Mac OS/.test(ua) ||
+    (navigator.platform === 'Intel Mac' && navigator.maxTouchPoints > 1)
+  // 테스트를 위해서 강제로 ua 를 설정할 수 있습니다.
+  // return 'aos'
   return isIos ? 'ios' : 'aos'
 }

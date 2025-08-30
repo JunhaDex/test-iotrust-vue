@@ -37,7 +37,8 @@ watch(
   width: 100%;
   max-width: var(--layout-breakpoint);
   transform: translate(-50%, 100%);
-  height: 75vh;
+  height: 55vh;
+  max-height: 548px;
   background-color: var(--color-background-1);
   border-radius: 1rem 1rem 0 0;
   transition: transform 0.3s ease-in;
