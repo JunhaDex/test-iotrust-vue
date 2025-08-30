@@ -5,16 +5,67 @@
       "banners": [
         {
           "id": 1,
-          "image": "https://d3h36fr9x6n6eb.cloudfront.net/letn-club/ClubBanner.png",
-          "link": "",
+          "image": {
+            "en": "https://raw.githubusercontent.com/KyungeunKim/iotrust-frontend-homework/main/images/banner_mapo_kr.png",
+            "ko": "https://raw.githubusercontent.com/KyungeunKim/iotrust-frontend-homework/main/images/banner_mapo_en.png"
+          },
+          "link": {
+            "en": "https://store.dcentwallet.com/blogs/post/tap-that-drop-with-map-protocol",
+            "ko": "https://store-kr.dcentwallet.com/blogs/post/tap-that-drop-with-map-protocol"
+          },
+          "description": {
+            "en": "",
+            "ko": ""
+          },
+          "extra": {},
           "order": 1,
           "created_at": "2024-06-10T12:00:00Z",
           "updated_at": "2024-06-10T12:00:00Z"
         },
         {
           "id": 2,
-          "image": "https://d3h36fr9x6n6eb.cloudfront.net/letn-club/ClubRegister.png",
-          "link": "",
+          "image": {
+            "en": "https://raw.githubusercontent.com/KyungeunKim/iotrust-frontend-homework/main/images/banner_dcent.png",
+            "ko": "https://raw.githubusercontent.com/KyungeunKim/iotrust-frontend-homework/main/images/banner_dcent.png"
+          },
+          "link": {
+            "en": "https://store.dcentwallet.com",
+            "ko": "https://store-kr.dcentwallet.com"
+          },
+          "description": {
+            "en": "Enhance your security with D'CENT biometric wallet",
+            "ko": "디센트 지문인증형 지갑으로 한층 더 강화된 보안을 경험하세요!"
+          },
+          "extra": {
+            "cta": {
+              "en": "Buy Now",
+              "ko": "구매하기"
+            }
+          },
+          "order": 2,
+          "created_at": "2024-06-11T12:00:00Z",
+          "updated_at": "2024-06-11T12:00:00Z"
+        },
+        {
+          "id": 3,
+          "image": {
+            "en": "https://raw.githubusercontent.com/KyungeunKim/iotrust-frontend-homework/main/images/banner_blog.png",
+            "ko": "https://raw.githubusercontent.com/KyungeunKim/iotrust-frontend-homework/main/images/banner_blog.png"
+          },
+          "link": {
+            "en": "https://store.dcentwallet.com/blogs/post",
+            "ko": "https://store-kr.dcentwallet.com/blogs/post"
+          },
+          "description": {
+            "en": "Visit the new D’CENT Blog to explore the latest updates first!",
+            "ko": "새로운 디센트 블로그를 방문하여 최신 업데이트를 먼저 확인해보세요!"
+          },
+          "extra": {
+            "cta": {
+              "en": "Explore",
+              "ko": "확인하기"
+            }
+          },
           "order": 2,
           "created_at": "2024-06-11T12:00:00Z",
           "updated_at": "2024-06-11T12:00:00Z"

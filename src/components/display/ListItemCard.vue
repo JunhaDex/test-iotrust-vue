@@ -12,7 +12,7 @@
       </div>
       <button v-if="showDelete" class="io-btn btn-outline btn-delete" @click.stop="handleDelete">
         <Bookmark :size="24" fill="var(--color-tx-red)" stroke-width="0" />
-        <span class="inline-block text-sm">{{ t('dapp_favorite_delete') }}</span>
+        <span class="inline-block text-xs">{{ t('dapp_favorite_delete') }}</span>
       </button>
     </div>
   </div>

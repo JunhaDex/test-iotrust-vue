@@ -64,6 +64,7 @@ const isLang = ref(false)
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 60px;
 
   & svg {
     width: 24px;
@@ -72,6 +73,7 @@ const isLang = ref(false)
 
   & label {
     font-size: var(--text-xs);
+    text-wrap: nowrap;
     color: var(--nav-inactive);
   }
 
@@ -103,6 +105,7 @@ const isLang = ref(false)
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 
   & svg {
     width: 24px;

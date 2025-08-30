@@ -30,7 +30,7 @@ export class DappService extends ApiService {
     const envMode = import.meta.env.MODE as AppEnv
     if (raw) {
       return {
-        meta: raw.data.paginate,
+        meta: { ...raw.data.paginate },
         list: raw.data.dapps
           .map((dapp: any) => {
             const semi = cleanObj<DiscoveryItem>(dapp, this.dappKeyMapping)
@@ -56,7 +56,6 @@ export class DappService extends ApiService {
   async getFavorite(): Promise<DiscoveryItem[]> {
     await sleep(1000)
     const mock = (await import('@/assets/data/favorite_list.json')).default as any
-    console.log(mock)
     return mock.map((item: any) => {
       const semi = cleanObj<DiscoveryItem>(item, this.dappKeyMapping)
       semi.description = item.link

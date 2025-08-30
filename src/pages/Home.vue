@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <main class="pt-[80px]">
     <SearchHeader />
-    <CarouselBanner class="mb-2" />
+    <CarouselBanner />
     <div class="content p-4">
       <h3 class="section-title text-lg font-semibold">{{ t('dapp_favorite_title') }}</h3>
       <ListItemCard
@@ -47,7 +47,7 @@ import SearchHeader from '@/components/layouts/SearchHeader.vue'
 import CarouselBanner from '@/components/display/CarouselBanner.vue'
 import ListItemCard from '@/components/display/ListItemCard.vue'
 import ModalDelete from '@/components/feedback/modal/ModalDelete.vue'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import type { DiscoveryItem } from '@/types/discovery.interface.ts'
 import DrawerDiscovery from '@/components/feedback/drawer/DrawerDiscovery.vue'
 import type { PageMeta } from '@/types/common.interface.ts'
@@ -55,9 +55,11 @@ import { DappService } from '@/services/dapp.service.ts'
 import ScrollObserver from '@/components/layouts/ScrollObserver.vue'
 import SkeletonListItem from '@/components/surfaces/skeleton/SkeletonListItem.vue'
 import { useI18n } from 'vue-i18n'
+import { useAgentStore } from '@/stores/agent.store.ts'
 
 const { t } = useI18n()
 const dappSvc = new DappService()
+const agentStore = useAgentStore()
 const favoriteList = ref<DiscoveryItem[]>([])
 const isFavOnceLoad = ref(false)
 const discItemList = ref<DiscoveryItem[]>([])
@@ -81,6 +83,14 @@ const openDiscovery = ref<{
   item: null,
 })
 
+watch(
+  () => agentStore.access.locale,
+  async () => {
+    discItemList.value = []
+    await fetchDiscItemList()
+  },
+)
+
 onMounted(async () => {
   await Promise.all([fetchDiscItemList(), fetchFavoriteList()])
 })
@@ -92,7 +102,6 @@ async function fetchFavoriteList() {
 
 async function fetchDiscItemList() {
   const res = await dappSvc.getDiscoveryItemList()
-  console.log(res)
   discItemList.value = res.list
   discItemListMeta.value = res.meta
 }

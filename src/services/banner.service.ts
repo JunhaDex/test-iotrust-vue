@@ -1,13 +1,11 @@
 import { ApiService } from '@/services/api.service.ts'
 import type { KeyMapping, PageRequest, PageResponse } from '@/types/common.interface.ts'
-import type { BannerItem } from '@/types/discovery.interface.ts'
+import type { AllowLocale, BannerItem } from '@/types/discovery.interface.ts'
 import { cleanObj, sleep } from '@/utils/common.util.ts'
 
 export class BannerService extends ApiService {
   private bannerKeyMapping: KeyMapping = {
     id: 'id',
-    image: 'image',
-    link: 'link',
     order: 'order',
   } as const
 
@@ -23,16 +21,31 @@ export class BannerService extends ApiService {
     const nextPage = options?.page?.nextPage ?? '1'
     const raw = mock[nextPage]
     // 수신 후 데이터 가공
+    const locale = this.agentStore.access.locale
     if (raw) {
       return {
-        meta: raw.paginate,
+        meta: { ...raw.paginate },
         list: raw.data.banners
           .map((banner: any) => {
-            return cleanObj<BannerItem>(banner, this.bannerKeyMapping)
+            const semi = cleanObj<BannerItem>(banner, this.bannerKeyMapping)
+            semi.image = banner.image[locale]
+            semi.link = banner.link[locale]
+            semi.detail = {
+              description: banner.description[locale],
+              extra: this.sortExtraLocale(banner.extra, locale),
+            }
+            return semi
           })
           .sort((a: BannerItem, b: BannerItem) => a.order - b.order),
       }
     }
     return this.emptyPage as PageResponse<BannerItem>
+  }
+
+  private sortExtraLocale(
+    extra: Record<string, Record<AllowLocale, string>>,
+    locale: AllowLocale,
+  ): any {
+    return Object.fromEntries(Object.entries(extra).map(([key, value]) => [key, value[locale]]))
   }
 }

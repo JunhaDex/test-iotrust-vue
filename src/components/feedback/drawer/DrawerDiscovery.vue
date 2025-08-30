@@ -17,8 +17,13 @@
       </div>
     </template>
     <template #sticky>
-      <div class="p-4 stick-bottom">
-        <button class="io-btn btn-outline w-full" @click="emit('close')">Close</button>
+      <div class="flex justify-center items-center flex-col gap-4 p-4">
+        <button class="io-btn btn-primary btn-width" @click="emit('close')">
+          {{ t('go_to_dapp') }}
+        </button>
+        <button class="io-btn btn-secondary btn-width" @click="emit('close')">
+          {{ t('button_close') }}
+        </button>
       </div>
     </template>
   </DrawerBase>
@@ -26,7 +31,9 @@
 <script setup lang="ts">
 import DrawerBase from '@/components/feedback/drawer/DrawerBase.vue'
 import type { DiscoveryItem } from '@/types/discovery.interface.ts'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const props = defineProps<{
   isOpen: boolean
   item: DiscoveryItem | null
@@ -42,5 +49,10 @@ const emit = defineEmits(['close'])
   flex-shrink: 0;
   box-shadow: var(--shadow-md);
   overflow: hidden;
+}
+
+.btn-width {
+  width: 100%;
+  max-width: 340px;
 }
 </style>

@@ -92,6 +92,40 @@ img {
       background-color: var(--v-s-green-lighter);
     }
   }
+
+  &.btn-primary {
+    color: var(--color-white);
+    background-color: var(--color-tx-green);
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    border: 2px solid var(--color-tx-green);
+
+    &:hover {
+      background-color: var(--v-s-green-darker);
+      border-color: var(--v-s-green-darker);
+    }
+
+    &:active {
+      background-color: var(--v-s-green-lighter);
+      border-color: var(--v-s-green-lighter);
+    }
+  }
+
+  &.btn-secondary {
+    border-radius: 999px;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-border-default);
+    box-sizing: border-box;
+  }
+
+  &.btn-white {
+    border-radius: 999px;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--color-white);
+    color: var(--color-tx-gray-1);
+    font-size: var(--text-sm);
+  }
+
 }
 
 .io-skeleton {

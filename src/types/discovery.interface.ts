@@ -21,4 +21,8 @@ export interface BannerItem {
   image: string // image url
   link: string // redirect
   order: number
+  detail: {
+    description?: string
+    extra?: any
+  }
 }

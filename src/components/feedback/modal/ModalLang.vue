@@ -12,7 +12,7 @@
           @click="() => handleLangChange('ko')"
         >
           <img src="https://flagcdn.com/kr.svg" width="30" alt="lang_kr" />
-          <span class="ml-2">한국어</span>
+          <span class="text-center">한국어</span>
         </div>
         <div
           class="io-btn btn-lang"
@@ -20,7 +20,7 @@
           @click="() => handleLangChange('en')"
         >
           <img src="https://flagcdn.com/us.svg" width="30" alt="lang_en" />
-          <span class="ml-2">English</span>
+          <span class="text-center">English</span>
         </div>
       </div>
       <div>
@@ -60,6 +60,7 @@ function handleLangChange(lang: AllowLocale) {
   justify-content: center;
   flex-direction: column;
   gap: 0.5rem;
+  padding: 1rem;
 
   & img {
     width: 24px;
