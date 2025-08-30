@@ -12,7 +12,7 @@
       </div>
       <button v-if="showDelete" class="io-btn btn-outline btn-delete" @click.stop="handleDelete">
         <Bookmark :size="24" fill="var(--color-tx-red)" stroke-width="0" />
-        <span class="inline-block text-sm">삭제</span>
+        <span class="inline-block text-sm">{{ t('dapp_favorite_delete') }}</span>
       </button>
     </div>
   </div>
@@ -21,7 +21,9 @@
 import type { DiscoveryItem } from '@/types/discovery.interface.ts'
 import { Bookmark } from 'lucide-vue-next'
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const props = defineProps<{
   item: DiscoveryItem
   options?: {

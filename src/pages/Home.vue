@@ -3,7 +3,7 @@
     <SearchHeader />
     <CarouselBanner class="mb-2" />
     <div class="content p-4">
-      <h3 class="section-title text-lg font-semibold">즐겨찾기</h3>
+      <h3 class="section-title text-lg font-semibold">{{ t('dapp_favorite_title') }}</h3>
       <ListItemCard
         v-for="item in favoriteList"
         :key="item.id"
@@ -14,13 +14,13 @@
       <SkeletonListItem v-if="favoriteList.length === 0 && !isFavOnceLoad" :count="3" />
       <div v-else-if="favoriteList.length === 0 && isFavOnceLoad" class="list-empty">
         <p class="text-tx-gray-3 text-center py-4">
-          즐겨찾기한 DApp이 없습니다. <br />
+          {{ t('dapp_favorite_empty') }} <br />
           <span class="inline-block mt-4 underline io-clickable" @click="refreshPage">
-            새로고침
+            {{ t('dapp_favorite_refresh') }}
           </span>
         </p>
       </div>
-      <h3 class="section-title text-lg font-semibold">목록</h3>
+      <h3 class="section-title text-lg font-semibold">{{ t('dapp_list_title') }}</h3>
       <ListItemCard
         v-for="item in discItemList"
         :key="item.id"
@@ -54,7 +54,9 @@ import type { PageMeta } from '@/types/common.interface.ts'
 import { DappService } from '@/services/dapp.service.ts'
 import ScrollObserver from '@/components/layouts/ScrollObserver.vue'
 import SkeletonListItem from '@/components/surfaces/skeleton/SkeletonListItem.vue'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const dappSvc = new DappService()
 const favoriteList = ref<DiscoveryItem[]>([])
 const isFavOnceLoad = ref(false)

@@ -4,7 +4,7 @@
       <ScanLine :size="24" />
     </span>
     <div class="flex-1">
-      <input class="io-input" placeholder="검색어 또는 URL 을 입력하세요" />
+      <input class="io-input" :placeholder="t('search_placeholder')" />
     </div>
     <span class="io-clickable icon">
       <Globe :size="24" />
@@ -13,6 +13,9 @@
 </template>
 <script setup lang="ts">
 import { ScanLine, Globe } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 <style scoped>
 .search-header {

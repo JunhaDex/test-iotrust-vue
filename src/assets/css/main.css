@@ -5,7 +5,7 @@ html {
   font-family: "Pretendard", sans-serif;
 }
 
-img, svg {
+img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -78,6 +78,19 @@ img, svg {
 
   &.btn-outline {
     border: 1px solid var(--color-border-default);
+  }
+
+  &.btn-green {
+    color: var(--color-white);
+    background-color: var(--color-tx-green);
+
+    &:hover {
+      background-color: var(--v-s-green-darker);
+    }
+
+    &:active {
+      background-color: var(--v-s-green-lighter);
+    }
   }
 }
 

@@ -9,10 +9,14 @@
 <script setup lang="ts">
 import NavigationBar from '@/components/layouts/NavigationBar.vue'
 import { onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useAgentStore } from '@/stores/agent.store.ts'
+
+const { locale } = useI18n()
+const agentStore = useAgentStore()
 
 onMounted(() => {
-  console.log('App mounted.', import.meta.env.MODE)
-  console.log(import.meta.env.VITE_API_URL)
+  locale.value = agentStore.access.locale
 })
 </script>
 <style scoped></style>

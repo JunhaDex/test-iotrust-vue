@@ -3,11 +3,11 @@
     <nav class="menu flex flex-1 justify-end gap-4">
       <span class="nav-item io-clickable io-clickable-nav">
         <Wallet :size="24" color="var(--nav-inactive)" />
-        <label>Wallet</label>
+        <label>{{ t('nav_wallet') }}</label>
       </span>
       <span class="nav-item io-clickable io-clickable-nav">
         <Lightbulb :size="24" color="var(--nav-inactive)" />
-        <label>Insight</label>
+        <label>{{ t('nav_insight') }}</label>
       </span>
     </nav>
     <div class="hexagon io-clickable">
@@ -16,17 +16,24 @@
     <nav class="menu flex flex-1 justify-start gap-4">
       <span class="nav-item io-clickable io-clickable-nav active">
         <Compass :size="24" color="var(--nav-active)" />
-        <label>Discover</label>
+        <label>{{ t('nav_discover') }}</label>
       </span>
-      <span class="nav-item io-clickable io-clickable-nav">
+      <span class="nav-item io-clickable io-clickable-nav" @click="isLang = true">
         <Languages :size="24" color="var(--nav-inactive)" />
-        <label>Language</label>
+        <label>{{ t('nav_language') }}</label>
       </span>
     </nav>
   </div>
+  <ModalLang :is-open="isLang" @close="isLang = false" />
 </template>
 <script setup lang="ts">
 import { Wallet, Lightbulb, ArrowRightLeft, Compass, Languages } from 'lucide-vue-next'
+import ModalLang from '@/components/feedback/modal/ModalLang.vue'
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+const isLang = ref(false)
 </script>
 <style scoped>
 .navigation-bar {
