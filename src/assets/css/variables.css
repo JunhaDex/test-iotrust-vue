@@ -1,5 +1,6 @@
 /* Default: light */
 @theme {
+  --layout-breakpoint: 768px;
   --color-background-1: #f9fafb;
   --color-background-2: #f2f2f2;
   --color-background-3: #e8e8e8;

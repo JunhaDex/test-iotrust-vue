@@ -2024,6 +2024,11 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
+lucide-vue-next@^0.542.0:
+  version "0.542.0"
+  resolved "https://registry.yarnpkg.com/lucide-vue-next/-/lucide-vue-next-0.542.0.tgz#ff5287edc8da8043b716b0b91833de2fee9fc65e"
+  integrity sha512-cJfyhFoneDgYTouHwUJEutXaCW5EQuRrBsvfELudWnMiwfqvcEtpZTFZLdZ5Nrqow+znzn+Iyhu3KeYIfa3mEg==
+
 magic-string@^0.30.17, magic-string@^0.30.4:
   version "0.30.18"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.18.tgz#905bfbbc6aa5692703a93db26a9edcaa0007d2bb"
@@ -2704,6 +2709,11 @@ vue-tsc@^3.0.4:
   dependencies:
     "@volar/typescript" "2.4.23"
     "@vue/language-core" "3.0.6"
+
+vue3-carousel@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/vue3-carousel/-/vue3-carousel-0.16.0.tgz#2b15a2ed83082eb3b91d3375d637c6d90d82d8d2"
+  integrity sha512-IKRKtvHP8gNDRHSzINXwFbJ/Zy2HS+Gv2lXPnAEop6pxsvB17+fz2WQlNZ6ytilLkM5DOu/jXPoDQi/xy17bjg==
 
 vue@^3.5.18:
   version "3.5.20"

@@ -4,3 +4,27 @@
 html {
   font-family: "Pretendard", sans-serif;
 }
+
+.screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background-2);
+  color: var(--color-tx-gray-1);
+  min-height: 100vh;
+  transition: all 0.2s ease-in-out;
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+  max-width: var(--layout-breakpoint);
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--color-background-1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0 0 8px;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
