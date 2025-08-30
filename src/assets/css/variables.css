@@ -24,7 +24,7 @@
 }
 :root {
   --icon-url: 'none';
-  --v-s-default: var(--color-bg-secondary);
+  --v-s-default: var(--color-background-2);
   --v-s-default-darker: hsl(from var(--v-s-default) h s calc(l - 10));
   --v-s-default-lighter: hsl(from var(--v-s-default) h s calc(l + 10));
   --v-s-primary: var(--color-tx-primary);

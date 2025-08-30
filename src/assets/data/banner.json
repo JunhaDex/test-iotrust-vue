@@ -1,0 +1,30 @@
+{
+  "1": {
+    "code": 200,
+    "data": {
+      "banners": [
+        {
+          "id": 1,
+          "image": "https://d3h36fr9x6n6eb.cloudfront.net/letn-club/ClubBanner.png",
+          "link": "",
+          "order": 1,
+          "created_at": "2024-06-10T12:00:00Z",
+          "updated_at": "2024-06-10T12:00:00Z"
+        },
+        {
+          "id": 2,
+          "image": "https://d3h36fr9x6n6eb.cloudfront.net/letn-club/ClubRegister.png",
+          "link": "",
+          "order": 2,
+          "created_at": "2024-06-11T12:00:00Z",
+          "updated_at": "2024-06-11T12:00:00Z"
+        }
+      ],
+      "paginate": {
+        "total": 2,
+        "pageNo": "1",
+        "hasNext": false
+      }
+    }
+  }
+}

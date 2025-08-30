@@ -9,3 +9,10 @@ export interface DiscoveryItem {
     locale: string
   }
 }
+
+export interface BannerItem {
+  id: number
+  image: string // image url
+  link: string // redirect
+  order: number
+}
