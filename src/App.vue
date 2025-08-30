@@ -1,5 +1,5 @@
 <template>
-  <div class="screen">
+  <div class="screen" :class="agentStore.uiMode">
     <div class="app-container" id="AppContainer">
       <RouterView />
       <NavigationBar />

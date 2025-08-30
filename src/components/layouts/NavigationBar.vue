@@ -10,7 +10,7 @@
         <label>{{ t('nav_insight') }}</label>
       </span>
     </nav>
-    <div class="hexagon io-clickable">
+    <div class="hexagon io-clickable" @click="updateTheme">
       <ArrowRightLeft :size="24" />
     </div>
     <nav class="menu flex flex-1 justify-start gap-4">
@@ -31,9 +31,15 @@ import { Wallet, Lightbulb, ArrowRightLeft, Compass, Languages } from 'lucide-vu
 import ModalLang from '@/components/feedback/modal/ModalLang.vue'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useAgentStore } from '@/stores/agent.store.ts'
 
 const { t } = useI18n()
+const agentStore = useAgentStore()
 const isLang = ref(false)
+
+function updateTheme() {
+  agentStore.uiMode = agentStore.uiMode === 'theme-light' ? 'theme-dark' : 'theme-light'
+}
 </script>
 <style scoped>
 .navigation-bar {
@@ -108,6 +114,7 @@ const isLang = ref(false)
   flex-shrink: 0;
 
   & svg {
+    color: var(--nav-bg);
     width: 24px;
     height: 24px;
   }

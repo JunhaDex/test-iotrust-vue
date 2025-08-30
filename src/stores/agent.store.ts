@@ -14,6 +14,7 @@ export const useAgentStore = defineStore(
       locale: import.meta.env.VITE_DEFAULT_LOCALE || 'ko',
       platform: 'ios',
     })
+    const uiMode = ref<'theme-light' | 'theme-dark'>('theme-light')
 
     function changeLocale(locale: AllowLocale) {
       access.value.locale = locale
@@ -22,6 +23,7 @@ export const useAgentStore = defineStore(
 
     return {
       access,
+      uiMode,
       changeLocale,
     }
   },
