@@ -14,5 +14,7 @@ export abstract class ApiService {
 
   constructor() {
     this.agentStore = useAgentStore()
+    console.log('connected to api: ', import.meta.env.VITE_API_URL)
+    // 여기서 axios 인스턴스를 설정하고 BASE_URL 지정 및 인터셉터를 설정합니다.
   }
 }
