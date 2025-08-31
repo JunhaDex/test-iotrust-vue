@@ -40,6 +40,11 @@
    yarn build --mode prod # 실환경
    yarn preview # 빌드 결과 preview
    ```
+   
+3. 언어 변경 및 UA 강제 주입
+
+- 언어는 하단 네비게이션의 Language 메뉴를 통해 변경할 수 있습니다. (구현한 기능 정리 참고)
+- 플랫폼 구분 로직은 App.vue 의 OnMounted 훅에서 처리되고, `agent.store.ts` 에 저장됩니다.
 
 ## 구현한 기능 정리
 
